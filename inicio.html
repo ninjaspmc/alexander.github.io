@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drex Bot</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #FFF; /* Cor do texto */
+            margin: 0;
+            padding: 0;
+            background-image: url('https://telegra.ph/file/a21d453d758358e40f30b.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .toolbar {
+            background-color: #333; /* Cor escura */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+        }
+        .toolbar-icon {
+            width: 30px; /* Ajuste no tamanho do ícone */
+            height: 30px; /* Ajuste no tamanho do ícone */
+            background-image: url('https://i.ibb.co/3rcT7dP/1708804559784.png');
+            background-size: cover;
+            cursor: pointer;
+            /* Ajuste na posição do ícone */
+            position: relative;
+            right: 0; /* Posição corrigida */
+            margin-right: 25px; /* Espaçamento da borda */
+        }
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao texto */
+        }
+         .menu {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: #333;
+            padding: 25px;
+            /* Ajustes para destacar cada item do menu */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: none; /* Oculta o menu inicialmente */
+        }
+
+        .menu a {
+            display: block;
+            color: #FFFFFF; /* Cor do texto */
+            text-decoration: none;
+            margin-bottom: 10px; /* Espaçamento entre os itens do menu */
+            padding: 8px 12px; /* Espaçamento interno dos itens do menu */
+            border-radius: 5px; /* Borda arredondada para destacar cada item */
+            transition: background-color 0.3s, color 0.3s; /* Transições suaves */
+        }
+        .menu a:hover {
+            background-color: #FF6600; /* Cor de fundo ao passar o mouse */
+            color: #333; /* Cor do texto ao passar o mouse */
+        }
+        .toolbar:hover .menu {
+            display: block; /* Exibe o menu quando o mouse passa sobre a barra de navegação */
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .banner-container {
+            margin-top: 50px; /* Para ajustar a margem do banner */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 5px solid #FF6600;
+        }
+        .banner {
+            background-image: url('https://telegra.ph/file/04ee66fcf7e31ca9eda65.jpg');
+            background-size: cover;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+        }
+        .banner img {
+            max-width: 100%;
+            height: 150px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo escuro */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Sombra invertida */
+        }
+        h1 {
+            text-align: center;
+            color: #FF6600; /* Cor do título */
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            background: linear-gradient(to right, #FF6600, #FF9933);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .feature {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333; /* Cor de fundo escuro */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra invertida */
+        }
+        .feature img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            height: 300px;
+        }
+        footer {
+            background-color: #333;
+            color: #FFF;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        footer a {
+            color: #FF6600;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="logo">Drex Bot</div>
+        <div class="toolbar-icon" onclick="toggleMenu()"></div>
+        <div class="menu" id="menu">
+            <a href="https://wa.me/559181221326?text=%23menuplanos">Planos do Drex</a>
+            <a href="https://chat.whatsapp.com/GKvapFh10Et1EUiTxtomP8">Comunidade do Drex</a>
+            <a href="https://drex.ninjaspmc.com.br/politicadecadastro">Política de Cadastro</a>
+            <a href="https://apis.ninjaspmc.com.br">Ninja APIs</a>
+        </div>
+    </div>
+    <div class="banner-container">
+        <div class="banner"></div>
+    </div>
+    <div class="container">
+        <h1>Drex - um bot de WhatsApp multifunções completo</h1>
+        <div class="feature">
+            <h3>Poderoso construtor de figurinhas!</h3>
+            <p>Figurinhas quadradas, sem fundo, figurinhas mantendo tamanho original, mistura de emojis, ou se preferir, favorite figurinhas prontas de diversos packs!</p>
+            <img src="https://telegra.ph/file/7cf9ca10e788a0395faaf.jpg" />
+        </div>
+<div class="feature">
+    <h3>Toque suas músicas preferidas!</h3>
+    <p>Busque suas músicas por nome ou artista e ouça-as diretamente pelo WhatsApp! Outros tipos de dowloanders disponíveis!</p>
+    <img src="https://telegra.ph/file/972182c5d4b04ca68637c.jpg" />
+</div>
+<div class="feature">
+    <h3>Jogue sozinho ou com amigos!</h3>
+    <p>Diversos jogos divertidos como forca, jogo da velha, Akinator, caça-palavras, etc.</p>
+    <img src="https://telegra.ph/file/ee33a93eb7bccd8928608.jpg" />
+</div>
+<div class="feature">
+    <h3>Defruste da inteligência artificial!</h3>
+    <p>Converse com chatbots como o ChatGPT, Gemini e Copilot; gere imagens com DALL-E ou imagine; aumente a qualidade ou remova o fundo de suas imagens; e mais ferramentas treinadas com IA!</p>
+    <img src="https://telegra.ph/file/ec372db5c2926ad208ea9.jpg" />
+</div>
+<div class="feature">
+    <h3>Navegue a internet sem sair do WhatsApp!</h3>
+    <p>Faça pesquisas, leia as notícias atualizadas dos principais portais: G1, UOL, Jovem Pan News, Estadão, CNN Brasil e GE!</p>
+    <img src="https://telegra.ph/file/6fec507ee5955b0fbe016.jpg" />
+</div>
+<div class="feature">
+    <h3>Gerencie o seu grupo sem se quer esforçar!</h3>
+    <p>Vários métodos de proteção como: anti-link, anti-estrangeiros, anti-menção, entre outros. Bana pessoas com comando sem busca-las na lista de participantes, anime o grupo com o modo diversão, respostas automáticas e sistema de level!</p>
+    <img src="https://telegra.ph/file/50def44c6e697c8603641.jpg" />
+</div>
+<h1>E muito mais!</h1>
+        <!-- Restante dos recursos aqui -->
+    </div>
+    <footer>
+        <p>&copy; 2024 Drex Bot. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var menuDisplay = getComputedStyle(menu).display;
+
+            if (menuDisplay === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById("menu");
+            var icon = document.querySelector(".toolbar-icon");
+
+            if (!menu.contains(e.target) && !icon.contains(e.target)) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
