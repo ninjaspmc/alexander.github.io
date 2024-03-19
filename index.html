@@ -45,44 +45,6 @@
             margin-left: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao texto */
         }
-         .menu {
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background-color: #333;
-            padding: 25px;
-            /* Ajustes para destacar cada item do menu */
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            display: none; /* Oculta o menu inicialmente */
-        }
-
-        .menu a {
-            display: block;
-            color: #FFFFFF; /* Cor do texto */
-            text-decoration: none;
-            margin-bottom: 10px; /* Espaçamento entre os itens do menu */
-            padding: 8px 12px; /* Espaçamento interno dos itens do menu */
-            border-radius: 5px; /* Borda arredondada para destacar cada item */
-            transition: background-color 0.3s, color 0.3s; /* Transições suaves */
-        }
-        .menu a:hover {
-            background-color: #FF6600; /* Cor de fundo ao passar o mouse */
-            color: #333; /* Cor do texto ao passar o mouse */
-        }
-        .toolbar:hover .menu {
-            display: block; /* Exibe o menu quando o mouse passa sobre a barra de navegação */
-        }
-        @keyframes slideIn {
-            from {
-                transform: translateY(-10px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
         .banner-container {
             margin-top: 50px; /* Para ajustar a margem do banner */
             display: flex;
@@ -154,16 +116,28 @@
     </style>
 </head>
 <body>
-    <div class="toolbar">
-        <div class="logo">Drex Bot</div>
-        <div class="toolbar-icon" onclick="toggleMenu()"></div>
-        <div class="menu" id="menu">
-            <a href="https://wa.me/559181221326?text=%23menuplanos">Planos do Drex</a>
-            <a href="https://chat.whatsapp.com/GKvapFh10Et1EUiTxtomP8">Comunidade do Drex</a>
-            <a href="https://drex.ninjaspmc.com.br/politicadecadastro">Política de Cadastro</a>
-            <a href="https://apis.ninjaspmc.com.br">Ninja APIs</a>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
     <div class="banner-container">
         <div class="banner"></div>
     </div>
@@ -172,32 +146,32 @@
         <div class="feature">
             <h3>Poderoso construtor de figurinhas!</h3>
             <p>Figurinhas quadradas, sem fundo, figurinhas mantendo tamanho original, mistura de emojis, ou se preferir, favorite figurinhas prontas de diversos packs!</p>
-            <img src="https://telegra.ph/file/7cf9ca10e788a0395faaf.jpg" />
+<img src="img/recursos/poderoso-construtor-de-figurinhas.jpg" />
         </div>
 <div class="feature">
     <h3>Toque suas músicas preferidas!</h3>
     <p>Busque suas músicas por nome ou artista e ouça-as diretamente pelo WhatsApp! Outros tipos de dowloanders disponíveis!</p>
-    <img src="https://telegra.ph/file/972182c5d4b04ca68637c.jpg" />
+    <img src="img/recursos/toque-suas-musicas-preferidas.jpg" />
 </div>
 <div class="feature">
     <h3>Jogue sozinho ou com amigos!</h3>
     <p>Diversos jogos divertidos como forca, jogo da velha, Akinator, caça-palavras, etc.</p>
-    <img src="https://telegra.ph/file/ee33a93eb7bccd8928608.jpg" />
+    <img src="img/recursos/jogue-sozinho-ou-com-amigos.jpg" />
 </div>
 <div class="feature">
     <h3>Defruste da inteligência artificial!</h3>
     <p>Converse com chatbots como o ChatGPT, Gemini e Copilot; gere imagens com DALL-E ou imagine; aumente a qualidade ou remova o fundo de suas imagens; e mais ferramentas treinadas com IA!</p>
-    <img src="https://telegra.ph/file/ec372db5c2926ad208ea9.jpg" />
+    <img src="img/recursos/desfrute-da-inteligencia-artificial.jpg" />
 </div>
 <div class="feature">
     <h3>Navegue a internet sem sair do WhatsApp!</h3>
     <p>Faça pesquisas, leia as notícias atualizadas dos principais portais: G1, UOL, Jovem Pan News, Estadão, CNN Brasil e GE!</p>
-    <img src="https://telegra.ph/file/6fec507ee5955b0fbe016.jpg" />
+    <img src="img/recursos/navegue-a-internet-sem-sair-do-whatsapp.jpg" />
 </div>
 <div class="feature">
-    <h3>Gerencie o seu grupo sem se quer esforçar!</h3>
+    <h3>Gerencie seu grupo sem se quer esforçar!</h3>
     <p>Vários métodos de proteção como: anti-link, anti-estrangeiros, anti-menção, entre outros. Bana pessoas com comando sem busca-las na lista de participantes, anime o grupo com o modo diversão, respostas automáticas e sistema de level!</p>
-    <img src="https://telegra.ph/file/50def44c6e697c8603641.jpg" />
+    <img src="img/recursos/gerencie-seu-grupo-sem-se-quer-esforcar.jpg" />
 </div>
 <h1>E muito mais!</h1>
         <!-- Restante dos recursos aqui -->
@@ -205,27 +179,5 @@
     <footer>
         <p>&copy; 2024 Drex Bot. Todos os direitos reservados.</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            var menuDisplay = getComputedStyle(menu).display;
-
-            if (menuDisplay === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-
-        document.addEventListener('click', function(e) {
-            var menu = document.getElementById("menu");
-            var icon = document.querySelector(".toolbar-icon");
-
-            if (!menu.contains(e.target) && !icon.contains(e.target)) {
-                menu.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
