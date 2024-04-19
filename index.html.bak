@@ -10,6 +10,7 @@
             color: #FFF; /* Cor do texto */
             margin: 0;
             padding: 0;
+            background-image: url('https://telegra.ph/file/a21d453d758358e40f30b.jpg');
             background-size: cover;
             background-position: center;
         }
