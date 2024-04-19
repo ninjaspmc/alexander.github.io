@@ -137,12 +137,27 @@
             height: 300px;
         }
         footer {
-            background-color: #333;
-            color: #FFF;
-            padding: 20px;
-            text-align: center;
-            font-size: 14px;
-        }
+    background-color: #333;
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    position: relative; /* Adiciona posição relativa para o pseudo-elemento */
+    z-index: 1; /* Define a ordem z-index */
+}
+
+footer::before {
+    content: ""; /* Conteúdo vazio */
+    position: absolute; /* Posição absoluta */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background-color: #666666; /* Cor de fundo cinza */
+    opacity: 0.5; /* Opacidade para não ficar muito escuro */
+    z-index: -1; /* Define a ordem z-index atrás do texto */
+    border-radius: 5px; /* Borda arredondada */
+}
         footer a {
             color: #FF6600;
             text-decoration: none;
@@ -203,7 +218,8 @@
     </div>
     <footer>
         <p>&copy; 2024 Alexander. Todos os direitos reservados.</p>
-    </footer>
+    </div>
+</footer>
 
     <script>
         function toggleMenu() {
