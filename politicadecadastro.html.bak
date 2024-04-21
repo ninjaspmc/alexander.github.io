@@ -129,9 +129,10 @@ footer::before {
         <h2>8. Concordância com a Política de Cadastro</h2>
         <p>Se você não concorda com esta Política de Cadastro, pedimos que não prossiga com o registro e uso do bot. Ela pode ser alterada previamente, a última alteração na Política de Cadastro foi feita em 20/04/2024.</p>
         </ul>
+     </div>
+    <footer>
+        <p>&copy; 2024 Alexander Bot. Todos os direitos reservados.</p>
     </div>
-<footer>
-    <p style="text-align: center;">&copy; 2024 Alexander Bot. Todos os direitos reservados.</p>
 </footer>
 </body>
 </html>
